@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    let formatter = DateFormatter()
+    
     @State private var selectedFilter = "filters"
     @State private var selectedProduct = 0
     @State private var selectedState = 0
     @State private var selectedCity = 0
+    @State var formatedDate = ""
     
     @State var cards: [Card] = []
     
     @State private var selection = ""
     @State private var showingPopover = false
+  
     var body: some View {
+        
         NavigationView {
             ZStack {
                 Rectangle()
@@ -68,6 +73,7 @@ struct ContentView: View {
                     }
                     ForEach(cards) { card in
                         ProductsView(productName: "Product Name", card: card)
+                            .padding(.vertical, 30)
                     }
                 }
                 .padding()
@@ -77,6 +83,7 @@ struct ContentView: View {
                    }
                }
             }
+            .navigationTitle("Edvora")
         }
     }
 }
@@ -94,23 +101,27 @@ struct ContentView_Previews: PreviewProvider {
 
 
 struct ProductsView: View {
+    
     let productName: String
     let card: Card
     
     var body: some View {
-        
         VStack(alignment: .leading) {
             Text("\(productName)")
                 .foregroundColor(.white)
                 .fontWeight(.regular)
                 .font(.system(size: 20))
                 .ignoresSafeArea()
+            
             Rectangle()
                 .frame(width: 300, height: 0.5)
                 .foregroundColor(.white)
                 .padding(.vertical, 6)
+            
             ScrollView(.horizontal) {
                 HStack {
+                    CardView(card: card)
+                    CardView(card: card)
                     CardView(card: card)
                 }
             }

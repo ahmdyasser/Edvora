@@ -15,6 +15,7 @@
 		96424E1627ABEF0500EEA29A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96424E1527ABEF0500EEA29A /* CardView.swift */; };
 		96424E1827ABF33400EEA29A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96424E1727ABF33400EEA29A /* NetworkManager.swift */; };
 		96A9FE3927AD48D20005D127 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FE3827AD48D20005D127 /* FilterView.swift */; };
+		96A9FE3D27AD8BFD0005D127 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FE3C27AD8BFD0005D127 /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		96424E1527ABEF0500EEA29A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		96424E1727ABF33400EEA29A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		96A9FE3827AD48D20005D127 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		96A9FE3C27AD8BFD0005D127 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		96424E1927ABF4F900EEA29A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				96A9FE3C27AD8BFD0005D127 /* K.swift */,
 				96424E1327ABEE3300EEA29A /* CardViewModel.swift */,
 			);
 			path = ViewModel;
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96424E0827ABCBD200EEA29A /* ContentView.swift in Sources */,
+				96A9FE3D27AD8BFD0005D127 /* K.swift in Sources */,
 				96424E0627ABCBD200EEA29A /* EdvoraApp.swift in Sources */,
 				96424E1827ABF33400EEA29A /* NetworkManager.swift in Sources */,
 				96424E1627ABEF0500EEA29A /* CardView.swift in Sources */,

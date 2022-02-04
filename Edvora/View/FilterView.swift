@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct FilterView: View {
+    
     var items: [String]
+    
     @State var placeholer = ""
     @State var productsFilter = 0
     @State var stateFilter = 0
@@ -23,6 +25,7 @@ struct FilterView: View {
                     .placeholder(when: placeholer.isEmpty, placeholder: {
                         VStack(alignment: .leading, spacing: 0) {
                             Text("Filters")
+                                .foregroundColor(Color(K.Color.white))
                                 .opacity(0.6)
                                 .font(.system(size: 20))
                         }
@@ -42,23 +45,8 @@ struct FilterView: View {
                 FilterOption(filterName: "City")
                 
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }
-        .cornerRadius(10)
-        .padding()
+        
     }
 }
 
@@ -78,7 +66,7 @@ struct FilterOption: View {
         } label: {
             ZStack {
                 Rectangle()
-                    .foregroundColor(Color("darker"))
+                    .foregroundColor(Color(K.Color.drakerGray))
                     .frame(height: 60)
                     .cornerRadius(10)
                 HStack {
@@ -105,7 +93,9 @@ extension View {
         @ViewBuilder placeholder: () -> Content) -> some View {
             
             ZStack(alignment: alignment) {
-                placeholder().opacity(shouldShow ? 1 : 0)
+                placeholder()
+                    
+                    .opacity(shouldShow ? 1 : 0)
                 self
             }
         }

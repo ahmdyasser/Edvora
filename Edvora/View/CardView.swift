@@ -24,16 +24,15 @@ struct CardView: View {
                             } placeholder: {
                                 Color.red
                             }
-                            .frame(width: 128, height: 128)
-                            .clipShape(RoundedRectangle(cornerRadius: 25))
+                            .frame(width: 80, height: 80)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                         } else {
                             // Fallback on earlier versions
                         }
                         Text("\(card.address.state), \(card.address.city)")
-                        
-                            .foregroundColor(.white)
+                            .frame(maxWidth: 150)
+                            .foregroundColor(Color(K.Color.white))
                             .font(.system(size: 13))
-                            .font(.system(.body, design: .rounded))
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
@@ -45,16 +44,16 @@ struct CardView: View {
                             .fontWeight(.semibold)
                         Spacer()
                         Text("Date: \(card.date)")
-                            .fontWeight(.light)
+                            .font(.system(size: 13))
                     }
-                    .foregroundColor(.white)
+                    .frame(maxWidth: 150)
+                    .foregroundColor(Color(K.Color.white))
                 }
                 
                 Text("\(card.discription)")
-                    .foregroundColor(.white)
-                    .fontWeight(.light)
+                    .foregroundColor(Color(K.Color.white))
+                    .font(.system(size: 13))
                     .multilineTextAlignment(.leading)
-                    .navigationTitle("Edvora")
                 
             }
         }
