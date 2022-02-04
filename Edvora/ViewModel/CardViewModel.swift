@@ -7,7 +7,9 @@
 
 import Foundation
 // MARK: - Card
-struct Card: Codable {
+struct Card: Codable, Identifiable {
+   
+    let id = UUID()
     let productName, brandName: String
     let price: Int
     let address: Address

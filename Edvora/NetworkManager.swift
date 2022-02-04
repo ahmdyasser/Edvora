@@ -6,26 +6,26 @@
 //
 
 import Foundation
-
 class NetworkManager {
-    var card: Card?
-    let urlString = "https://assessment-edvora.herokuapp.com"
-    init() {
-        if let url = URL(string: self.urlString) {
-            do {
-                if let data = try? Data(contentsOf: url) {
-                    parse(json: data)
+        
+    func fetch(completion: @escaping ([Card]) -> ()) {
+        guard let url = URL(string: "https://assessment-edvora.herokuapp.com") else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                let jsonDecoder = JSONDecoder()
+                do {
+                    let cards = try jsonDecoder.decode([Card].self, from: data)
+                    print(cards)
+                    DispatchQueue.main.async {
+                        completion(cards)
+                    }
+                } catch {
+                    debugPrint(error.localizedDescription)
                 }
             }
-            
         }
+        .resume()
     }
-    func parse(json: Data) {
-        let decoder = JSONDecoder()
-        do {
-            if let jsonCard = try? decoder.decode(Card.self, from: json) {
-                card = jsonCard
-            }
-        }
-    }
+    
 }
+

@@ -14,6 +14,7 @@
 		96424E1427ABEE3300EEA29A /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96424E1327ABEE3300EEA29A /* CardViewModel.swift */; };
 		96424E1627ABEF0500EEA29A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96424E1527ABEF0500EEA29A /* CardView.swift */; };
 		96424E1827ABF33400EEA29A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96424E1727ABF33400EEA29A /* NetworkManager.swift */; };
+		96A9FE3927AD48D20005D127 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FE3827AD48D20005D127 /* FilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		96424E1327ABEE3300EEA29A /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		96424E1527ABEF0500EEA29A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		96424E1727ABF33400EEA29A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		96A9FE3827AD48D20005D127 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		96424E1A27ABF50600EEA29A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96A9FE3827AD48D20005D127 /* FilterView.swift */,
 				96424E0727ABCBD200EEA29A /* ContentView.swift */,
 				96424E1527ABEF0500EEA29A /* CardView.swift */,
 			);
@@ -166,6 +169,7 @@
 				96424E0627ABCBD200EEA29A /* EdvoraApp.swift in Sources */,
 				96424E1827ABF33400EEA29A /* NetworkManager.swift in Sources */,
 				96424E1627ABEF0500EEA29A /* CardView.swift in Sources */,
+				96A9FE3927AD48D20005D127 /* FilterView.swift in Sources */,
 				96424E1427ABEE3300EEA29A /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

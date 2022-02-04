@@ -13,11 +13,10 @@ struct ContentView: View {
     @State private var selectedState = 0
     @State private var selectedCity = 0
     
-    let filters = ["No Filter", "Products", "State", "City"]
-    @State private var selection = "Red"
-    let colors = ["Red", "Green", "Blue", "Black", "Tartan"]
-    let network = NetworkManager()
+    @State var cards: [Card] = []
     
+    @State private var selection = ""
+    @State private var showingPopover = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -27,32 +26,61 @@ struct ContentView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         HStack {
-                            Spacer()
                             Button {
-                                
+                                showingPopover = true
                             } label: {
-                                Text("clear filter")
-                                    .fontWeight(.regular)
-                                    .foregroundColor(.white)
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(Color("darker"))
+                                        .cornerRadius(10)
+                                    HStack(spacing: 30) {
+                                        Text("Filters")
+                                            .foregroundColor(.white)
+                                       
+                                        Image(systemName: "arrowtriangle.down.fill")
+                                            .foregroundColor(.white)
+                                        
+                                    }
+                                    .padding()
+                                }
+                               
+                            }.popover(isPresented: $showingPopover) {
+                                FilterView(items: ["filter1", "2"])
                             }
+            
+                            Spacer()
                             
+                            
+                            Button {
+                            } label: {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(Color("darker"))
+                                        .cornerRadius(10)
+                                    HStack(spacing: 30) {
+                                        Text("clear filter")
+                                            .foregroundColor(.white)
+                                    }
+                                    .padding()
+                                }
+                            }
                         }
-                    
-                      
-                        ProductsView(productName: "Product Name")
-                        ProductsView(productName: "Shoes")
-                        
-                       
                     }
-                    
+                    ForEach(cards) { card in
+                        ProductsView(productName: "Product Name", card: card)
+                    }
                 }
                 .padding()
+                .onAppear {
+                   NetworkManager().fetch { (cards) in
+                       self.cards = cards
+                   }
+               }
             }
-            
-            
         }
     }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -67,9 +95,9 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ProductsView: View {
     let productName: String
+    let card: Card
+    
     var body: some View {
-        let address = Address(state: "state", city: "city")
-        let card = Card(productName: "Product Name", brandName: "brand Name", price: 9, address: address, discription: "Its a good product", date: "2022-2-2", time: "12:21", image: "unnamed")
         
         VStack(alignment: .leading) {
             Text("\(productName)")
@@ -83,8 +111,6 @@ struct ProductsView: View {
                 .padding(.vertical, 6)
             ScrollView(.horizontal) {
                 HStack {
-                    CardView(card: card)
-                    CardView(card: card)
                     CardView(card: card)
                 }
             }
