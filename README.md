@@ -1,3 +1,3 @@
 # Edvora
+<img width="465" alt="gif" src="https://user-images.githubusercontent.com/42544598/152586432-75bf0d21-63df-4a84-bea7-b199bd06a6e3.gif">
 
-![edvora](https://user-images.githubusercontent.com/42544598/152555832-57a66ffe-61db-417c-8ac6-540d2e433b8b.gif)
